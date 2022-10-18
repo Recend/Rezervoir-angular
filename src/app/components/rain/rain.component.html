@@ -1,0 +1,47 @@
+<div class="row mt-5">
+  <div class="col-md-6">
+    <div class="card">
+
+
+
+      <div class="card-header">Rezervuaras</div>
+      <div class="card-body">
+        <div class="mb-3">
+          <label>Rezervuaro talpa</label>
+          <input type="number" class="form-control" [(ngModel)]="talpa" >
+        </div>
+        <div class="mb-3">
+          <label>Rezervuaro pildymo greitis</label>
+          <input type="number" class="form-control" [(ngModel)]="greitis">
+        </div>
+        <div class="mb-3">
+          <label>Rezervuaro pildymo laikas</label>
+          <input type="number" class="form-control" [(ngModel)]="laikas">
+        </div>
+        <button class="btn btn-success" [disabled]="talpa==null || greitis==null || laikas==null"  (click)="skaiciuoti()" >Skaičiuoti</button>
+
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+
+
+
+      <div class="card-header">Pildymo rezultatas</div>
+      <div class="card-body">
+        <div *ngIf="rezultatas!=null"> Pripildyta {{ rezultatas }} %</div>
+        <div *ngIf="rezultatas!>100"><div class="alert alert-danger" role="alert">
+          Perpildytas
+        </div></div>
+        <div *ngIf="rezultatas==100"><div class="alert alert-success" role="alert">
+        Pilnut pilnutėlis!
+        </div></div>
+        <div *ngIf="rezultatas!<100 && rezultatas!>=80"><div class="alert alert-warning" role="alert">
+         Greit bus pilnas!
+        </div></div>
+        <div *ngIf="rezultatas==null"> Įveskite talpą, greitį, laiką ir paspauskite skaičiuoti</div>
+      </div>
+    </div>
+  </div>
+</div>
