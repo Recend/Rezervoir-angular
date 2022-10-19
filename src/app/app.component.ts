@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {TasksService} from "./services/tasks.service";
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'rain';
+  title = 'tasks-list';
+
+  constructor(private tasksService:TasksService) {
+    tasksService.load();
+  }
+
+
 }
+
