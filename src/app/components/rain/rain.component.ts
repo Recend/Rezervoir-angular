@@ -24,8 +24,6 @@ export class RainComponent implements OnInit {
     }
   }
 
-public greaterThan(rezultatas1:number, num:number){
-  return rezultatas1>num;
-}
+
 
 }
