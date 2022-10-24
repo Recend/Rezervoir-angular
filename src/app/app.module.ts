@@ -17,6 +17,7 @@ const appRoutes:Routes=[
   {path:"", component:TasksListComponent},
   {path:"new", component:AddTaskComponent},
   {path:"edit/:id", component:EditTaskComponent},
+  {path:"rezervuaras", component:RainComponent},
 ]
 
 
