@@ -11,6 +11,8 @@ import { TaskListDetailsComponent } from './components/task-list-details/task-li
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {RouterModule, Routes} from "@angular/router";
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
+import { CurrenciesComponent } from './components/currencies/currencies.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 const appRoutes:Routes=[
@@ -18,6 +20,7 @@ const appRoutes:Routes=[
   {path:"new", component:AddTaskComponent},
   {path:"edit/:id", component:EditTaskComponent},
   {path:"rezervuaras", component:RainComponent},
+  {path:"currencies", component:CurrenciesComponent},
 ]
 
 
@@ -30,13 +33,15 @@ const appRoutes:Routes=[
     TaskComponent,
     TaskListDetailsComponent,
     NavigationComponent,
-    EditTaskComponent
+    EditTaskComponent,
+    CurrenciesComponent
 
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
