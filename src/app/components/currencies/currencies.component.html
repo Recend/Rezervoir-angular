@@ -3,6 +3,7 @@
   <div class="col-md-6">
     <label class="form-label">Pasirinkitę valiutą</label>
     <select [(ngModel)]="from" class="form-control">
+      <option>Pasrinikite valiutą</option>
       <option *ngFor="let v of valiutos">{{ v }}</option>
     </select>
   </div>
@@ -10,13 +11,14 @@
   <div class="col-md-6">
     <label class="form-label">Į kokią konvertuoti</label>
     <select [(ngModel)]="to"  class="form-control">
+      <option>Pasrinikite valiutą</option>
       <option *ngFor="let v of valiutos">{{ v }}</option>
     </select>
   </div>
 
 
 
-<div *ngIf="loading==false && error==false" class="alert alert-success">{{from}} to {{ to }} conversion is {{currency}} USD </div>
+<div *ngIf="loading==false && error==false" class="alert alert-success">{{ outtext }} </div>
 <div *ngIf="loading==true && error==false" class="alert alert-warning">Loading...</div>
 <div *ngIf="loading==false && error==true" class="alert alert-danger">ERROR 404</div>
 

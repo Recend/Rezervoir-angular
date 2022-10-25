@@ -10,7 +10,6 @@ import {Valiutos} from "../models/valiutos";
 })
 export class CurrenciesService {
 
-    // public _valiutos=['AUD', 'BGN', 'BRL', 'EUR', 'USD']
 
   constructor(private http:HttpClient) { }
 
@@ -22,7 +21,5 @@ export class CurrenciesService {
     return this.http.get<Valiutos>('https://api.frankfurter.app/currencies');
 
 }
-// // public get currencies(){
-// //     return this._valiutos
-// }
+
 }

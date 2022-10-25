@@ -13,6 +13,9 @@ import {RouterModule, Routes} from "@angular/router";
 import { EditTaskComponent } from './components/edit-task/edit-task.component';
 import { CurrenciesComponent } from './components/currencies/currencies.component';
 import {HttpClientModule} from "@angular/common/http";
+import { ListComponent } from './components/courses/list/list.component';
+import { EditComponent } from './components/courses/edit/edit.component';
+import { NewComponent } from './components/courses/new/new.component';
 
 
 const appRoutes:Routes=[
@@ -21,6 +24,9 @@ const appRoutes:Routes=[
   {path:"edit/:id", component:EditTaskComponent},
   {path:"rezervuaras", component:RainComponent},
   {path:"currencies", component:CurrenciesComponent},
+  {path:"courses",component:ListComponent},
+  {path:"courses/:id",component:EditComponent},
+  {path:"newcourse", component:NewComponent},
 ]
 
 
@@ -34,7 +40,10 @@ const appRoutes:Routes=[
     TaskListDetailsComponent,
     NavigationComponent,
     EditTaskComponent,
-    CurrenciesComponent
+    CurrenciesComponent,
+    ListComponent,
+    EditComponent,
+    NewComponent
 
   ],
   imports: [

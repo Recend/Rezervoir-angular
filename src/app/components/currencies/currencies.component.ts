@@ -10,27 +10,20 @@ import {CurrenciesService} from "../../services/currencies.service";
 })
 export class CurrenciesComponent implements OnInit {
 
-  public rates:string|null=null;
   public currency:any|null=null;
   public key:any
   public loading=true;
   public error=false;
   public base:string|null=null;
   public from="EUR";
-    public to="USD";
-    public valiutos:any
+  public to="USD";
+  public valiutos:any
 
+  public outtext:string|null=null;
 
   constructor( private currenciesService:CurrenciesService) {
-    // this.valiutos=currenciesService.currencies
-    // this.valiutos=currenciesService.currencies;
     this.loadCurrencies();
     this.loadValiutos();
-
-   // currenciesService.getCurrencies().subscribe((response)=>{
-   //     this.rates=response.rates
-   //    console.log(response.rates);
-   //  });
   }
 
   private loadValiutos(){
@@ -38,7 +31,6 @@ export class CurrenciesComponent implements OnInit {
       {
         next: (response) => {
           this.valiutos =  Object.keys(response);
-
         }
       });
   }
@@ -53,7 +45,7 @@ export class CurrenciesComponent implements OnInit {
           this.currency=Object.values(response.rates);
           this.key=Object.keys(response.rates);
           this.loading=false;
-          this.base=response.base
+          this.outtext=this.from + ' to ' +this.to +' conversion is ' + this.currency + ' ' + this.to ;
         },
         error:(err)=>{
           this.error=true;
